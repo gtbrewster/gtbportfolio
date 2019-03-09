@@ -1,6 +1,8 @@
 Here is the link to the live deployment:
 https://gtbportfolio.herokuapp.com/
 
+Here is a test update!
+
 Another project of mine is a skate spot finder under development but deployed at:
 https://gtbapp.herokuapp.com/
 
