@@ -43,7 +43,7 @@ a:hover .header-profile-image {
     background: linear-gradient(to bottom, #499bea 0%,#207ce5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5',GradientType=0 );
     color: white;
-    font-color: black;
+    font: black;
     text-align: center;
     height: 50px;
     line-height:35px;
