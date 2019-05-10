@@ -4,8 +4,8 @@
 'use strict';
 
 //About controller
-angular.module('about').controller('AboutController', ['$scope',
-  function($scope){
+angular.module('about').controller('AboutController', ['$scope', 'Authentication',
+  function($scope, Authentication){
     // Find a list of About
     // $scope.find = function () {
     //   $scope.about = About.query();
