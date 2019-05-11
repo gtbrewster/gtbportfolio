@@ -10,5 +10,6 @@ angular.module('about').controller('AboutController', ['$scope', 'Authentication
     // $scope.find = function () {
     //   $scope.about = About.query();
     // };
+    $scope.authentication = Authentication;
   }
 ]);
