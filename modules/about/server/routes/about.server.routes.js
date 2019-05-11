@@ -11,8 +11,7 @@ var aboutPolicy = require('../policies/about.server.policy'),
 
 module.exports = function (app) {
   // About collection routes
-  app.route('/about').all(aboutPolicy.isAllowed)
-    .get(about.list);
+  app.route('/about').get(about.list);
     // .post(articles.create);
 
   // Single article routes
