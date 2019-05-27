@@ -41,6 +41,7 @@ module.exports.start = function start(callback) {
     app.listen(config.port, function () {
 
       // Logging initialization
+      console.log(chalk.green('George Brewster Portfolio Application\t\t\t\t'));
       console.log('--');
       console.log(chalk.green(config.app.title));
       console.log(chalk.green('Environment:\t\t\t' + process.env.NODE_ENV));

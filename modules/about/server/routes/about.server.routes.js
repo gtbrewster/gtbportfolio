@@ -11,15 +11,5 @@ var aboutPolicy = require('../policies/about.server.policy'),
 
 module.exports = function (app) {
   // About collection routes
-  app.route('/about').get(about.list);
-    // .post(articles.create);
-
-  // Single article routes
-  // app.route('/api/articles/:articleId').all(articlesPolicy.isAllowed)
-  //   .get(articles.read)
-  //   .put(articles.update)
-  //   .delete(articles.delete);
-
-  // Finish by binding the article middleware
-  app.param('aboutId', about.aboutByID);
+  app.route('/api/about').all(aboutPolicy.isAllowed);
 };

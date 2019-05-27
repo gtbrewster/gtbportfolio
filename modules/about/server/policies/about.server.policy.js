@@ -1,6 +1,3 @@
-/**
- * Created by George on 5/4/2017.
- */
 'use strict';
 
 /**
@@ -25,13 +22,13 @@ exports.invokeRolesPolicies = function () {
     roles: ['user'],
     allows: [{
       resources: '/api/about',
-      permissions: ['get', 'post']
+      permissions: '*'
     }]
   }, {
     roles: ['guest'],
     allows: [{
       resources: '/api/about',
-      permissions: ['get']
+      permissions: '*'
     }]
   }]);
 };
