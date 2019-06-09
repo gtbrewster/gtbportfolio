@@ -27,7 +27,7 @@ module.exports = {
   // for obsecurity reasons
   sessionKey: 'sessionId',
   sessionCollection: 'sessions',
-  logo: 'modules/core/client/img/brand/logo.png',
+  logo: 'modules/core/client/img/brand/gtb.png',
   favicon: 'modules/core/client/img/brand/gtb.ico',
   uploads: {
     profileUpload: {
