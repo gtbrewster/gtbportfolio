@@ -8,6 +8,6 @@ angular.module('about').config(['$stateProvider',
       .state('about', {
         url:'/about',
         templateUrl: 'modules/about/client/views/about.client.view.html'
-      });  
+      });   
     }
 ]);

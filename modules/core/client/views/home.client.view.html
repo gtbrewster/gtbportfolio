@@ -1,15 +1,21 @@
 <section ng-controller="HomeController">
   <br>
+  <div class="col-lg-12 text-center">
+      <img class="logo" src="http://localhost:3000/images/gtb.png" alt="My_Initials">
+  </div>
   <div class="jumbotron text-center">
     <div class="row text-center">
-      <p class="lead h3">
-        <img src="/gtb.png" alt="Posterized George" width="200" height="294">
-        <br>Hello, my name is George Brewster.
-        <br>I am a Programmer Analyst living in West Palm Beach, FL.
-        <br>I have a Bachelor's of Science in Computer Science degree 
+      <p class="lead h3"> 
+        <h2>Hello, my name is George Brewster.</h2>
+        I am a Programmer Analyst living in West Palm Beach, FL.
+        <br>I graduated with a Bachelor's of Science in Computer Science 
         <br>from the University of Florida.
       </p>
+      <div class="col-lg-12 text-center">
+          <img class="logo  center" width="120" height="79.85" src="http://localhost:3000/images/florida-gators-logo.png" alt="My_Gators_logo">
+      </div>
     </div>
+    <br>
     <div class="row">
       <p>
         <a class="btn btn-primary btn-lg" href="http://google.com" target="_blank">Google</a>
@@ -21,6 +27,7 @@
       </p>
     </div>
   </div> 
+  
   <div>
     <h2>I work on an EMS & SCADA Support team in renewable energy.</h2>
     <p>My team onboards energy plants into a SCADA system for Energy Management Services,</p>
@@ -48,4 +55,109 @@
   </div>
   <br>Enjoy my portfolio,
   <br>George Brewster.
+  
 </section>
+<!--
+PONG with html5 and js
+by George Brewster
+04/07/2018
+Based on the video and class:
+https://youtu.be/KoWqdEACyLI
+"Code your first game: Arcade classic in JavaScript on Canvas"
+This tutorial was fun and confidence boosting!!!
+-->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script>
+    p1y=p2y=40;
+    pt=10;
+    ph=100;
+    bx=by=50;
+    bd=5;
+    xv=yv=4;
+    score1=score2=0;
+    ais=2;
+    gameover=false;
+    max=10;
+    window.onload=function(){
+        c=document.getElementById('gc');
+        cc=c.getContext('2d');
+        setInterval(update,1000/30);
+        c.addEventListener('mousemove',function(e){
+          p1y = e.clientY-ph/2;
+        });
+    }
+    function checkscore(){
+      if(score1 == max || score2 == max){
+        gameover = true;
+        bx = 0;
+        by = 0;
+        xv = 0;
+        yv = 0;
+        ais=0;
+        p2y=c.height/2;
+        return;
+      }else{
+        reset();
+      }
+    }
+    function reset(){
+      bx = c.width/2;
+      by = c.height/2;
+      xv = -xv;
+      yv = 3;
+    }
+    function update(){
+      bx += xv;
+      by += yv;
+      if(by<0 && yv<0){
+        yv=-yv;
+      }
+      if(by>c.height && yv>0){
+        yv=-yv;
+      }
+      if(bx<0){
+        if(by>p1y && by<p1y+ph){
+          xv=-xv;
+          dy=by-(p1y+ph/2);
+          yv=dy*0.3;
+        }else{
+          score2++;
+          checkscore();
+        }
+      }
+      if(bx>c.width){
+        if(by>p1y && by<p2y+ph){
+          xv=-xv;
+          dy=by-(p2y+ph/2);
+          yv=dy*0.3;
+        }else{
+          score1++;
+          checkscore();
+        }
+      }
+      if(p2y+ph/2<by){
+        p2y+=ais;
+      }else{
+        p2y-=ais;
+      }
+      cc.fillStyle='black'
+      cc.fillRect(0,0,c.width,c.height);
+      cc.fillStyle='white';
+      cc.fillRect(0,p1y,pt,ph);
+      cc.fillRect(c.width-pt,p2y,pt,ph);
+      cc.fillRect(bx-bd/2,by-bd/2,bd,bd)
+      cc.fillText(score1,100,100);
+      cc.fillText(score2,c.width-100,100);
+      cc.fillText("This is PONG with HTML5 and JS, first to 10 wins!", c.height/3, c.width/2);
+      if(gameover){
+        cc.fillText("GAME OVER!!! Hit close!", c.height/3, c.width/6);
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <canvas id="gc" width="640" height="480"></canvas>
+  </body>
+</html>

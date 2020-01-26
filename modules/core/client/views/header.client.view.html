@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Core App Template and Menu</title>
-  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" type="text/html" href="../css/core.css">
 </head>
 <header class="header">
 <div class="container" ng-controller="HeaderController">
@@ -16,13 +16,11 @@
     </button>
     <a ui-sref="home" class="navbar-brand">George Brewster</a>
   </div>
-  <div class="divider-vertical">
-    <a ui-sref="about" class="navbar-brand navbar-right">About</a>
-  </div>
-  
-  
+
   <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
-    <ul class="nav navbar-nav" ng-if="menu.shouldRender(authentication.user);">
+    
+    
+    <ul class="nav navbar-nav navbar-right" ng-if="menu.shouldRender(authentication.user);">
       <li ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ng-switch="item.type" ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}}" dropdown="item.type === 'dropdown'">
         <a ng-switch-when="dropdown" class="dropdown-toggle" dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
         <ul ng-switch-when="dropdown" class="dropdown-menu">
@@ -33,7 +31,8 @@
         <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
       </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
+<!--
+   <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
       <li ui-sref-active="active">
         <a ui-sref="authentication.signup">Sign Up</a>
       </li>
@@ -42,7 +41,7 @@
         <a ui-sref="authentication.signin">Sign In</a>
       </li>
     </ul>
-    
+  
     <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
       <li class="dropdown" dropdown>
         <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
@@ -66,6 +65,7 @@
         </ul>
       </li>
     </ul>
+    -->
   </nav>
 </div>
 </header>

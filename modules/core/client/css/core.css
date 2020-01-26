@@ -37,11 +37,10 @@ a:hover .header-profile-image {
 }
 
 .header {
-      background-image: linear-gradient(#0021A5,#FA4616);
-    /*background: #0021A5; /* Old browsers */
-   /* background: #0021A5;/*-moz-linear-gradient(top, #0021A5 0%, #207ce5 100%); /* FF3.6-15 */
-    /*background: #0021A5;/*-webkit-linear-gradient(top, #0021A5 0%,#207ce5 100%); /* Chrome10-25,Safari5.1-6 */
-    /*background: #0021A5;/*linear-gradient(to bottom, #0021A5 0%,#207ce5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: #0021A5; 
+    background: -moz-linear-gradient(top, #0021A5 0%, #207ce5 100%);
+    background: -webkit-linear-gradient(top, #0021A5 0%,#207ce5 100%);
+    background: linear-gradient(to bottom, #0021A5 0%,#207ce5 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0021A5', endColorstr='#207ce5',GradientType=0 );
     color: white;
     font: black;
@@ -57,5 +56,8 @@ a:hover .header-profile-image {
   font: black;
 }
 
-body {/*background-color: #B1B3B6;*/
-  background-image: linear-gradient(white,#B1B3B6);}
+body {
+  background-color: #B1B3B6;
+  background-image: linear-gradient(white,#B1B3B6);
+  background-color: inherit;
+}
